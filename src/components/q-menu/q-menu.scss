@@ -1,0 +1,245 @@
+.q-menu {
+  height: 50px;
+  z-index: -1;
+  display: flex;
+  overflow: hidden;
+  background: var(--q-menu-background);
+  align-items: center;
+  .side-menu {
+    display: none;
+    position: relative;
+  }
+
+  .menu-mini-logo {
+    height: 50px;
+    position: absolute;
+    left: 21%;
+    display: block;
+  }
+
+  .menu-mini-logo-show {
+    display: block;
+  }
+
+  .buttons-container {
+    position: absolute;
+    width: 100%;
+    left: 26%;
+    //line-height: 50px;
+    display: block;
+
+    .button-item {
+      display: inline-block;
+      position: relative;
+      .sub-menu {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        left: 14px;
+        width: 100%;
+        min-width: 160px;
+        transform: translateY(3px);
+      }
+
+      &:hover {
+        .sub-menu {
+          display: unset;
+        }
+      }
+    }
+
+    .menu-button {
+      background: transparent;
+      color: white;
+      border: unset;
+      vertical-align: middle;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      margin-left: var(--q-unit-double);
+      margin-right: var(--q-unit-double);
+      padding-bottom: 8px;
+      border-radius: 3px;
+      &:hover {
+        border-bottom: 2px solid var(--q-secondary-color);
+      }
+    }
+  }
+
+  .sticky {
+    top: 0;
+    width: 100%;
+  }
+}
+
+
+stencil-route-link {
+  a {
+    text-decoration: none;
+    color: unset;
+    line-height: 50px;
+  }
+}
+
+.side {
+  width: 100%;
+  text-align: center;
+  a {
+    line-height: 30px!important;
+  }
+}
+
+
+.active-button {
+  border-bottom: 2px solid var(--q-secondary-color);
+}
+
+
+
+@media screen and (max-width: 850px) {
+  .q-menu {
+    .menu-mini-logo {
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .side-menu {
+      position: unset;
+      display: unset;
+      .icon-close, .icon-open {
+        font-size: 1.8rem;
+        position: absolute;
+        color: white;
+        z-index: 12;
+        top: 0;
+        left: 0;
+        transform: translate(50%, 35%);
+        &:hover {
+          color: var(--q-secondary-color);
+        }
+      }
+      .menu-content {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        z-index: 10;
+        background: var(--q-menu-background);
+        padding-top: 30px !important;
+        left: -100%;
+
+        .menu-button {
+          color: white;
+          text-transform: uppercase;
+        }
+
+        .button-item {
+          display: flex;
+          flex-direction: column;
+          .row-title {
+            position: relative;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+
+            .sub-menu-icon, .sub-menu-icon-opened {
+              font-size: 1.8rem;
+              color: white;
+              position: absolute;
+              right: var(--q-unit-big);
+              z-index: -1;
+            }
+            .sub-menu-icon-opened {
+              display: none;
+            }
+          }
+
+          .sub-container {
+            display: none;
+          }
+        }
+
+        .items-opacity {
+          .row-title {
+            opacity: 0.8;
+          }
+        }
+
+        .open {
+          .row-title {
+            opacity: 1;
+            a {
+              font-weight: bold;
+            }
+            .sub-menu-icon {
+              display: none;
+            }
+            .sub-menu-icon-opened {
+              display: unset;
+            }
+          }
+          .sub-container {
+            display: block;
+          }
+        }
+      }
+
+      .menu-open {
+        height: 100%;
+        .icon-open {
+          display: none;
+        }
+
+        .icon-close {
+          display: unset;
+        }
+
+        .menu-content {
+          left: 0;
+          animation: slideIn;
+          animation-duration: 400ms;
+        }
+      }
+
+      .menu-close {
+        .icon-open {
+          display: unset;
+        }
+
+        .icon-close {
+          display: none;
+        }
+
+        .menu-content {
+          animation: slideOut;
+          animation-duration: 300ms;
+        }
+      }
+    }
+    .buttons-container {
+      display: none;
+    }
+  }
+}
+
+
+
+@keyframes slideIn {
+  from { left: -100%; }
+  to { left: 0; }
+}
+
+@keyframes slideOut {
+  from { left: 0; }
+  to { left: -100%; }
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+}
+

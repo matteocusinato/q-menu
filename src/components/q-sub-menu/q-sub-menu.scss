@@ -1,0 +1,38 @@
+
+.q-sub-menu {
+  transform: translateY(-2px);
+
+  .sub-menu-container {
+    background: rgba(35,38,56, .9);
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--q-unit-base);
+    padding-right: var(--q-unit-base);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    .menu-voice {
+      font-weight: 400;
+      color: var(--q-secondary-color);
+      margin-top: 15px;
+      font-size: 1rem;
+    }
+    .menu-button {
+      border-bottom: 1px solid dimgrey;
+      border-radius: 3px;
+      &:hover {
+        border-bottom: 2px solid var(--q-secondary-color);
+      }
+      &:last-child {
+        margin-bottom: var(--q-unit-base);
+      }
+    }
+    .menu-button, a {
+      font-size: 0.9rem;
+      color: var(--q-button-text-color);
+      text-decoration: none;
+      line-height: 50px;
+    }
+  }
+}
+
+
