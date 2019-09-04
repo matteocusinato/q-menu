@@ -1,6 +1,6 @@
 {
   "name": "q-menu",
-  "version": "0.0.29",
+  "version": "1.0.0",
   "description": "A Responsive Menu for web apps and web sites build with StencilJS",
   "keywords": [
     "menu",
@@ -31,8 +31,15 @@
     "@stencil/core": "^1.3.0",
     "@stencil/sass": "^1.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteocusinato/q-menu.git"
+  },
   "author": "Matteo Cusinato",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteocusinato/q-menu"
+  },
   "dependencies": {
     "@stencil/sass": "^1.0.1"
   }

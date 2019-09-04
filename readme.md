@@ -2,12 +2,12 @@
 
 # Responsive Menu
 
-This is a Menu Web Component.
+####This is a Menu Web Component.
 
 A responsive menu designed for Web and Mobile Apps build with StencilJS.
 
 
-![Menu-Demo](src/q-demo2.gif)
+![Menu-Demo](https://github.com/matteocusinato/q-menu/blob/master/src/q-demo2.gif?raw=true)
 
 
 ## Installation
