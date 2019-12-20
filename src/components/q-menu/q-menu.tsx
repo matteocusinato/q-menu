@@ -19,12 +19,16 @@ export class QMenu {
   menuPosition: number;
   miniLogo;
 
-/*  async componentWillLoad() {
-    this.menuItems = await getMenu();
-    this.openMenuIcon = <ion-icon name="menu"/>;
-    this.closeMenuIcon = <ion-icon name="close"/>;
-    this.imgPath = '../../assets/logo.png';
-  }*/
+  async componentWillLoad() {
+    // this.menuItems = await getMenu();
+    if (!this.openMenuIcon) {
+      this.openMenuIcon = <ion-icon name="menu"/>;
+    }
+    if (!this.closeMenuIcon) {
+      this.closeMenuIcon = <ion-icon name="close"/>;
+    }
+    // this.imgPath = '../../assets/logo.png';
+  }
 
   componentDidLoad() {
     this.appMenu = document.querySelector('q-menu');
@@ -118,7 +122,7 @@ export class QMenu {
                     <div class="button-item">
                       <div class="row-title">
                         { item.url ?
-                          <stencil-route-link url={item.url} class="menu-button side" onClick={() => this.navigate()}>{item.title}</stencil-route-link>
+                          <a href={item.url} class="menu-button side" onClick={() => this.navigate()}>{item.title}</a>
                           : <div class="menu-button side" onClick={() => this.setSubSideMenuClass(item)}>{item.title}</div>
                         }
                         {
@@ -145,7 +149,7 @@ export class QMenu {
           <div class="buttons-container">
             {this.menuItems.map((item) =>
               <div class="button-item">
-                { item.url ? <stencil-route-link url={item.url} class="menu-button" onClick={() => this.scrollToTop()}>{item.title}</stencil-route-link> : <div class="menu-button">{item.title}</div> }
+                { item.url ? <a href={item.url} class="menu-button" onClick={() => this.scrollToTop()}>{item.title}</a> : <div class="menu-button">{item.title}</div> }
                 {
                   item.subMenu.length > 0 ?
                     <q-sub-menu subMenu={item.subMenu} class="sub-menu"/> : null

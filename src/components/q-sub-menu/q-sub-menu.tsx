@@ -23,8 +23,7 @@ export class QSubMenu {
           ...acc,
             item.title ? <div class="menu-voice">{item.title}</div> : null,
           ...item.subMenuItems.map((a) => (
-              <stencil-route-link url={a.url} class="menu-button"
-                                  activeClass="active-button" onClick={() => this.routeClickedHandler()}>{a.title}</stencil-route-link>
+              <a href={a.url} class="menu-button"onClick={() => this.routeClickedHandler()}>{a.title}</a>
             ))
             ],[])}
         </div>
