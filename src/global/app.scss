@@ -10,18 +10,19 @@
 
 
 :root {
-  --q-menu-background: #232638;
+  --q-menu-background: unset;
+  --q-sub-menu-background: unset;
   --q-side-menu-background: #232638;
+  --q-side-sub-menu-background: #1f2642;
   --q-secondary-color: #0074D9;
-  --q-button-text-color: white;
+  --q-button-text-color: black;
   --q-menu--button-border-bottom-color: #232638;
   --q-side-button-text-color: white;
-  --q-sub-button-text-color: white;
+  --q-sub-button-text-color: black;
   --q-side-sub-button-text-color: white;
-  --q-icon-open-color: white;
+  --q-icon-open-color: black;
   --q-icon-close-color: white;
   --q-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-
 }
 
 
@@ -30,5 +31,4 @@ html {
   --q-unit-base:  8px;
   --q-unit-double: 16px;
   --q-unit-big:  24px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }

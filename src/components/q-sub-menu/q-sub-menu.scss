@@ -3,10 +3,9 @@
   transform: translateY(-2px);
 
   .sub-menu-container {
-    background: rgba(35,38,56, .9);
+    background: var(--q-sub-menu-background);
     display: flex;
     flex-direction: column;
-    padding-left: var(--q-unit-base);
     padding-right: var(--q-unit-base);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -17,6 +16,7 @@
       font-size: 1rem;
     }
     .menu-button {
+      padding-left: 3px;
       border-bottom: 1px solid dimgrey;
       border-radius: 3px;
       &:hover {
@@ -30,7 +30,7 @@
       font-size: 0.9rem;
       color: var(--q-sub-button-text-color) !important;
       text-decoration: none;
-      line-height: 50px;
+      line-height: 40px;
     }
   }
 }

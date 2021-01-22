@@ -112,7 +112,9 @@ export class QMenu {
      {
       return (
         <div class="q-menu">
-          <img src={this.imgPath} class="menu-mini-logo" alt="logo"/>
+          {
+           this.imgPath && this.imgPath != null ? <img src={this.imgPath} class="menu-mini-logo" alt="logo"/> : null
+          }
           <div class="side-menu">
             <div class={this.getMenuClasses()}>
               <span class="icon-open" onClick={() => this.toggle()}>{this.openMenuIcon}</span>
@@ -127,11 +129,11 @@ export class QMenu {
                         }
                         {
                           item.subMenu[0].subMenuItems.length > 0 ?
-                            <ion-icon name='arrow-dropdown' class="sub-menu-icon"/> : null
+                            <ion-icon name='chevron-down' class="sub-menu-icon"/> : null
                         }
                         {
                           item.subMenu[0].subMenuItems.length > 0 ?
-                            <ion-icon name='arrow-dropup' class="sub-menu-icon-opened"/> : null
+                            <ion-icon name='chevron-up' class="sub-menu-icon-opened"/> : null
                         }
                       </div>
                       {

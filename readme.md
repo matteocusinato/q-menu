@@ -28,16 +28,20 @@ In your global app css:
 @import "~q-menu/dist/collection/global/app.scss";
 
 Customize your menu with css variables:
-    --q-menu-background // primary menu background color, default: #232638;
+    --q-menu-background // primary menu background color, default: unset;
+    --q-sub-menu-background: // background color of desktop sub menu, default: unset;
+    --q-side-menu-background: // background color of mobile sub menu, default: unset;
     --q-secondary-color // secondary color, default: #0074D9;
-    --q-button-text-color // color of the text of the button, default: #f8f8f8;
+    --q-button-text-color // color of the text of the button, default: black;
     --q-transition // menu transition, default: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    --q-icon-open-color: // the color of the icon that open the menu
+    --q-icon-close-color: // the color of the icon that close the menu
 ```
 
 ## Example
 ```bash
 // if you use ion-icon, you must import the script
-// <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+// <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
 openMenuIcon = <ion-icon name="menu"/>;
 closeMenuIcon = <ion-icon name="close"/>; 

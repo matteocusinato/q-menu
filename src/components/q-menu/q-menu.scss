@@ -2,9 +2,9 @@
   height: 50px;
   z-index: -1;
   display: flex;
-  overflow: hidden;
   background: var(--q-menu-background);
   align-items: center;
+  cursor: pointer;
   .side-menu {
     display: none;
     position: relative;
@@ -33,8 +33,6 @@
         display: none;
         position: absolute;
         z-index: 1;
-        top: 30px;
-        left: 0;
         width: 100%;
         min-width: 160px;
         transform: translateY(3px);
@@ -43,10 +41,18 @@
         margin-right: 0 !important;
       }
       &:hover {
-        border-bottom: 2px solid var(--q-menu--button-border-bottom-color);
+        // border-bottom: 2px solid var(--q-menu--button-border-bottom-color);
         .sub-menu {
           display: unset;
         }
+      }
+      .menu-button {
+        &:hover {
+          opacity: .5;
+        }
+      }
+      a {
+        text-decoration: none;
       }
     }
 
@@ -56,9 +62,7 @@
       vertical-align: middle;
       font-size: 0.9em;
       text-transform: uppercase;
-      margin-left: var(--q-unit-double);
       margin-right: var(--q-unit-double);
-      padding-bottom: 8px;
       border-radius: 3px;
     }
     .menu-button, a {
@@ -144,6 +148,9 @@ stencil-route-link {
             justify-content: center;
             font-size: 24px;
             font-weight: 600;
+            a {
+              text-decoration: none;
+            }
             .side {
               color: var(--q-side-button-text-color) !important;
             }
